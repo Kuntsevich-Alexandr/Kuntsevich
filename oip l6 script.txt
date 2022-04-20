@@ -1,0 +1,9 @@
+import matplotlib.pyplot as plt
+import RPi.GPIO as gpio
+measured_data = []
+plt.plot(measured_data)
+plt.show()
+meas_data_str = [str(item) for item in measured_data]
+print(measured_data, meas_data_str)
+with open("data.txt", "w") as outfile:
+	outfile.write("\n".join(meas_data_str))
